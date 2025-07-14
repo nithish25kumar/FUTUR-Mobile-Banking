@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:futur_mobile_banking/repositary/screens/registerpage/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'futur-mobile_banking',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SpeedPage(),
     );
   }
 }
