@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:futur_mobile_banking/repositary/screens/login/login.dart';
+import 'package:futur_mobile_banking/repositary/screens/register/signin.dart';
 
 class SpeedPage extends StatelessWidget {
   const SpeedPage({super.key});
@@ -102,7 +104,12 @@ class SpeedPage extends StatelessWidget {
                   height: 60,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => loginscreen()));
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0XFFD6D3FF),
                       foregroundColor: Colors.black,
@@ -136,7 +143,10 @@ class SpeedPage extends StatelessWidget {
                       ),
                       minimumSize: const Size.fromHeight(48),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => signin()));
+                    },
                     child: const Text(
                       'Already have an account',
                       style: TextStyle(

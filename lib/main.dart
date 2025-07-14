@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:futur_mobile_banking/repositary/screens/registerpage/register.dart';
+import 'package:futur_mobile_banking/repositary/screens/registerorlogin/register.dart';
 
 void main() {
   runApp(const MyApp());
