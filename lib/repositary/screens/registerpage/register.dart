@@ -9,20 +9,6 @@ class SpeedPage extends StatelessWidget {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          // Progress Bar
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: LinearProgressIndicator(
-              value: 0.66, // Example: 66% progress
-              backgroundColor: Colors.grey[800],
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.yellow),
-              minHeight: 4,
-            ),
-          ),
-
-          // Optional Background Blend Decorations (Optional)
           Positioned(
             top: 500,
             left: 20,
@@ -39,8 +25,6 @@ class SpeedPage extends StatelessWidget {
               fit: BoxFit.contain,
             ),
           ),
-
-          // Content Area
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
@@ -113,7 +97,6 @@ class SpeedPage extends StatelessWidget {
 
                 const Spacer(flex: 3),
 
-                // Register Button
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple[300],
