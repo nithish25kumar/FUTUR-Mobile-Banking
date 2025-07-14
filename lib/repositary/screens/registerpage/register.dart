@@ -10,15 +10,15 @@ class SpeedPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: 500,
-            left: 20,
+            top: 700,
+            left: 60,
             child: Image.asset(
               'assets/images/Blend 01.png',
               fit: BoxFit.contain,
             ),
           ),
           Positioned(
-            bottom: 500,
+            bottom: 600,
             right: 0,
             child: Image.asset(
               'assets/images/Blend 02.png',
@@ -87,48 +87,61 @@ class SpeedPage extends StatelessWidget {
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Erat sed aliquam vulputate commodo, aenean vitae lacus. Id sed aenean et nunc ut.',
+                    'Manage your money effortlessly and stay in control anytime, anywhere.',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.grey,
+                      height: 1.5,
                     ),
                   ),
                 ),
 
                 const Spacer(flex: 3),
 
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple[300],
-                    foregroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                SizedBox(
+                  height: 60,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0XFFD6D3FF),
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      minimumSize: Size.fromHeight(48),
                     ),
-                    minimumSize: const Size.fromHeight(48),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    'Register Now',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    child: Text(
+                      'Register Now',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 15,
+                          letterSpacing: 2),
+                    ),
                   ),
                 ),
 
                 const SizedBox(height: 12),
 
-                // Login Button
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                SizedBox(
+                  height: 60,
+                  width: double.infinity,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      backgroundColor: Color(0XFF4D4D4D),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      minimumSize: const Size.fromHeight(48),
                     ),
-                    minimumSize: const Size.fromHeight(48),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    'Already have an account',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    onPressed: () {},
+                    child: const Text(
+                      'Already have an account',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
                   ),
                 ),
 
