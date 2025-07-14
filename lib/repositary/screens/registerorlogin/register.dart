@@ -108,7 +108,7 @@ class SpeedPage extends StatelessWidget {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => loginscreen()));
+                              builder: (context) => PersonalDetailsPage()));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0XFFD6D3FF),
@@ -144,8 +144,10 @@ class SpeedPage extends StatelessWidget {
                       minimumSize: const Size.fromHeight(48),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => signin()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => loginscreen()));
                     },
                     child: const Text(
                       'Already have an account',
