@@ -215,7 +215,14 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage> {
           width: double.infinity,
           height: 50,
           child: ElevatedButton(
-            onPressed: _onContinuePressed,
+            onPressed: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Verify(
+                            mobileNumber: mobileController.text.trim(),
+                          )));
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFD6D3FF),
               foregroundColor: Colors.black,

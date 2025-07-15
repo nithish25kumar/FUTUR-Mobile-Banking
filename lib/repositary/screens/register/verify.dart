@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:futur_mobile_banking/repositary/screens/register/signin.dart';
 
 import 'otp.dart';
 
 class Verify extends StatelessWidget {
-  const Verify({super.key});
+  final String mobileNumber;
+
+  const Verify({super.key, required this.mobileNumber});
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController mobileController =
+        TextEditingController(text: mobileNumber);
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -14,7 +20,12 @@ class Verify extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const PersonalDetailsPage(),
+              ),
+            );
           },
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
         ),
@@ -67,6 +78,7 @@ class Verify extends StatelessWidget {
                   _buildTextField(
                     label: 'Mobile Number',
                     keyboardType: TextInputType.phone,
+                    controller: mobileController,
                   ),
                 ],
               ),
@@ -106,14 +118,15 @@ class Verify extends StatelessWidget {
 
   Widget _buildTextField({
     required String label,
-    String? initialValue,
+    required TextEditingController controller,
     TextInputType keyboardType = TextInputType.text,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextFormField(
-          initialValue: initialValue,
+          controller: controller,
+          readOnly: true,
           keyboardType: keyboardType,
           style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
