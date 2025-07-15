@@ -12,7 +12,20 @@
           "package_name": "com.example.futur_mobile_banking"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "990093975974-geh9gukcflvmjnndtu5vj1nl8c8eoobe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.futur_mobile_banking",
+            "certificate_hash": "c24f4e45069e60060c3b2439e42e2e0bace70e3e"
+          }
+        },
+        {
+          "client_id": "990093975974-1p515fplct6fuca9faqcn15cvsqmf9bh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCZliW6jV16ReXLfiRK3HFjwAEAxwcjZr8"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990093975974-1p515fplct6fuca9faqcn15cvsqmf9bh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "990093975974-gasqd0vfrdqa8t3f6fq4qcgqvhmgbdr9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.futurMobileBanking"
+              }
+            }
+          ]
         }
       }
     }
