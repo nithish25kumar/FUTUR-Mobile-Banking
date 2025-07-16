@@ -216,12 +216,22 @@ class _PersonalDetailsPageState extends State<PersonalDetailsPage> {
           height: 50,
           child: ElevatedButton(
             onPressed: () {
+              final birthday =
+                  '${dayController.text}/${monthController.text}/${yearController.text}';
+              final user = UserDetails(
+                firstName: firstNameController.text.trim(),
+                lastName: lastNameController.text.trim(),
+                email: emailController.text.trim(),
+                birthday: birthday,
+                mobile: mobileController.text.trim(),
+              );
+
               Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Verify(
-                            mobileNumber: mobileController.text.trim(),
-                          )));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Verify(userDetails: user),
+                ),
+              );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFD6D3FF),

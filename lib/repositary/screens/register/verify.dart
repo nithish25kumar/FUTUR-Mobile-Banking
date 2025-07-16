@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:futur_mobile_banking/repositary/screens/register/signin.dart';
-
-import 'otp.dart';
+import 'package:futur_mobile_banking/repositary/screens/register/otp.dart';
+import '../../../model/userDetail.dart';
 
 class Verify extends StatelessWidget {
-  final String mobileNumber;
+  final UserDetails userDetails;
 
-  const Verify({super.key, required this.mobileNumber});
+  const Verify({super.key, required this.userDetails});
 
   @override
   Widget build(BuildContext context) {
     final TextEditingController mobileController =
-        TextEditingController(text: mobileNumber);
+        TextEditingController(text: userDetails.mobile);
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -20,12 +19,7 @@ class Verify extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const PersonalDetailsPage(),
-              ),
-            );
+            Navigator.pop(context);
           },
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
         ),
@@ -41,15 +35,13 @@ class Verify extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: 20,
-            left: 20,
-            child: Image.asset('assets/images/Blend 01.png'),
-          ),
+              top: 20,
+              left: 20,
+              child: Image.asset('assets/images/Blend 01.png')),
           Positioned(
-            top: 50,
-            right: 0,
-            child: Image.asset('assets/images/Blend 02.png'),
-          ),
+              top: 50,
+              right: 0,
+              child: Image.asset('assets/images/Blend 02.png')),
           SafeArea(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -66,18 +58,8 @@ class Verify extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Text(
-                    'Varius facilisis in duis volutpat. Viverra fermentum nibh consectetur purus.',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  const SizedBox(height: 30),
                   _buildTextField(
                     label: 'Mobile Number',
-                    keyboardType: TextInputType.phone,
                     controller: mobileController,
                   ),
                 ],
@@ -94,7 +76,14 @@ class Verify extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => OtpPage()));
+                context,
+                MaterialPageRoute(
+                  builder: (_) => OtpPage(
+                    mobileNumber: userDetails.mobile,
+                    userDetails: userDetails,
+                  ),
+                ),
+              );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFD6D3FF),
@@ -103,13 +92,8 @@ class Verify extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
               ),
             ),
-            child: const Text(
-              'Continue',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
+            child: const Text('Continue',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
           ),
         ),
       ),
@@ -119,7 +103,6 @@ class Verify extends StatelessWidget {
   Widget _buildTextField({
     required String label,
     required TextEditingController controller,
-    TextInputType keyboardType = TextInputType.text,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +110,6 @@ class Verify extends StatelessWidget {
         TextFormField(
           controller: controller,
           readOnly: true,
-          keyboardType: keyboardType,
           style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
             hintText: label,
